@@ -1,0 +1,64 @@
+{% extends 'xyadmin/base-children.html' %}
+{% load static %}
+
+{% block layui-from %}
+    <style type="text/css">
+        form {
+            width: 500px;
+            margin: 10px auto;
+        }
+
+        h1, h2, h3 {
+            padding: 10px 0;
+        }
+
+        a {
+            text-align: right;
+            font-size: 18px;
+            color: #1C86EE;
+        }
+
+        .xtree_contianer {
+            width: 500px;
+            border: 1px solid #9C9C9C;
+            overflow: auto;
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 10px 0 25px 5px;
+        }
+
+        .div-btns {
+            margin: 20px 0;
+        }
+
+        .layui-form-label {
+            width: 60px !important;
+        }
+    </style>
+<form class="layui-form" style="width:80%;">
+    {% csrf_token %}
+    <input type="hidden" id="id" class="id" value="{{ role_id }}">
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">角色名称</label>
+		<div class="layui-input-block">
+			<input type="text" id="title" class="layui-input title" lay-verify="required" placeholder="请输入角色名称" value="{{ model_form.title.value }}">
+		</div>
+	</div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">权限分配</label>
+		<div id="xtree3" class="layui-input-block xtree_contianer"></div>
+        <input type="hidden" id="menu_tree" value="{{ menu_tree_list }}">
+	</div>
+
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-input-block">
+			<button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="roles_edit">保存</button>
+			<button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">取消</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="{% static 'xyadmin/layui-xtree/layui-xtree.js'%}"></script>
+<script type="text/javascript" src="{% static 'xyadmin/js/rbac/roles/roleedit.js'%}"></script>
+{% endblock %}
