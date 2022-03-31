@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function, unicode_literals
-from django.urls import path,include
+from django.urls import path, include
 from apps.myadmin import views as my_views
 
 urlpatterns = [

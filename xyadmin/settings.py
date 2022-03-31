@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.rbac',
     'apps.myadmin',
+    'apps.taskproj'
 ]
 
 MIDDLEWARE = [
