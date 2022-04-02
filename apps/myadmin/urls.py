@@ -9,4 +9,5 @@ urlpatterns = [
     path('login', my_views.login,name='login'),
     path('logout', my_views.logout,name='logout'),
     path('rbac', include('apps.rbac.urls')),
+    path('task', include('apps.taskproj.urls')),
 ]
