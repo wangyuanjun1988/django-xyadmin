@@ -162,5 +162,5 @@ SAFE_URL = [
 # CELERY
 CELERY_BROKER_URL = 'redis://:football@192.168.85.131:13379/11' # Broker配置，使用Redis作为消息中间件
 # CELERY_RESULT_BACKEND = 'redis://:football@192.168.85.131:13379/11' # BACKEND配置，这里使用redis
-CELERY_RESULT_BACKEND = 'xyadmin' # 使用django orm 作为结果存储
+CELERY_RESULT_BACKEND = 'django-db' # 使用django orm 作为结果存储
 CELERY_RESULT_SERIALIZER = 'json' # 结果序列化方案
