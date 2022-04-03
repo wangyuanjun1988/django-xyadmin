@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
-from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import UserInfo, Role
-from .forms import UserInfo_New_Form,UserInfoForm,RoleForm
+from .forms import UserInfo_New_Form,UserInfoForm, RoleForm
 from django.conf import settings
 import json
 from apps.rbac.service import menuserver
