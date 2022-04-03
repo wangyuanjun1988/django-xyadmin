@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_celery_results',
+    'django_celery_beat',
+    'rest_framework',
     'apps.rbac',
     'apps.myadmin',
     'apps.taskproj'
@@ -83,9 +85,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'xyadmin',
-        'HOST':'127.0.0.1',
-        'USER':'wang',
-        'PASSWORD':'123456',
+        'HOST': '127.0.0.1',
+        'USER': 'wang',
+        'PASSWORD': '123456',
         'OPTIONS': {'charset':'utf8mb4'},
     }
 }
